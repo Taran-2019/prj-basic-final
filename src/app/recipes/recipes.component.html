@@ -1,0 +1,12 @@
+<div class="row">
+  <div class="col-md-5">
+    <app-recipe-list (sendNameforDetail)="selectdetail=$event"></app-recipe-list><!--sendNamefoeDetail se jo recipeEvent aya wo selectdetail mein $event krke bheja jai-->
+  </div>
+  <div class="col-md-7">
+    <app-recipe-detail [showdetail]="selectdetail" *ngIf="selectdetail; else elsetext"></app-recipe-detail>
+    <ng-template #elsetext>
+      <p>Select a recipe</p>
+    </ng-template>
+  </div>
+</div>
+ 
